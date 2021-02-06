@@ -11,13 +11,14 @@
 </head>
 <body>
 
-<div th:replace="header :: header">
-</div>
+<div th:replace="header :: header">...</div>
 <main class="py-5 flex-fill" role="main">
    <div class="container">
        <div class="row">
            <div class="col-sm-4 py-2 box-shadow" th:each="entry : ${posts}">
+               <a class="post-url" th:href="@{'/post/' + ${entry.getId()}}">
                    <img alt="Post Title Image" class="card-img-top" th:src="'https://picsum.photos/id/'+${entry.getId()}+'/500/350'">
+                   </a>
                <div class="card-body">
                    <div class="card-title" th:text="${entry.getTitle()}"></div>
                    <p class="card-text" th:text="${entry.getLead()}"></p>
