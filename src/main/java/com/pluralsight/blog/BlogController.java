@@ -10,7 +10,7 @@ import java.util.Map;
 public class BlogController {
 	
 	@RequestMapping ( "/" )
-	public String listPost ( ) {
+	public String listPosts ( ) {
 		Map < String, String > map = new HashMap <> ( );
 		map.put ( "title", "Blog Post 1" );
 		return "home";
